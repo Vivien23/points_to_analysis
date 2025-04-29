@@ -1,0 +1,4 @@
+(executable
+ (public_name points_to_analysis)
+ (name main)
+ (libraries points_to_analysis))

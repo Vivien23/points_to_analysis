@@ -1,0 +1,7 @@
+# dune init project points_to_analysis
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /home/vgachet/.cache/dune/db
+# Workspace root: "/home/vgachet/Stage
+# Inria/points_to_check/points_to_analysis"
+# Auto-detected concurrency: 22
