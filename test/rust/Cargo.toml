@@ -1,0 +1,30 @@
+cargo-features = ["edition2024"]
+
+[package]
+name = "points_to_check"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+openssl = "0.10.66"
+
+[[bin]]
+name = "arc_swap"
+path = "src/arc_swap.rs"
+
+[[bin]]
+name = "double_free"
+path = "src/double_free.rs"
+
+[[bin]]
+name = "exp_perm"
+path = "src/exp_perm.rs"
+
+[[bin]]
+name = "open_ssl"
+path = "src/open_ssl.rs"
+
+[[bin]]
+name = "prot_perm"
+path = "src/prot_perm.rs"
+
