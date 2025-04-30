@@ -1,7 +1,11 @@
 /target
 *.code-workspace
 <<<<<<< HEAD
+<<<<<<< HEAD
 _build/*
 =======
 _build
 >>>>>>> 40f721d (Updated gitignore)
+=======
+_build/
+>>>>>>> a50b8ae (Updated gitignore)
