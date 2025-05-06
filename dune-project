@@ -19,7 +19,9 @@
  (name points_to_analysis)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml)
+ (depends 
+    (ocaml (= 4.14.0))
+    yojson)
  (tags
   ("add topics" "to describe" your project)))
 
