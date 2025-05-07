@@ -5,11 +5,11 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github Vivien23/points_to_analysis))
 
-(authors "Author Name <author@example.com>")
+(authors "Vivien GACHET")
 
-(maintainers "Maintainer Name <maintainer@example.com>")
+(maintainers "Vivien GACHET")
 
 (license LICENSE)
 
@@ -20,7 +20,7 @@
  (synopsis "A short synopsis")
  (description "A longer description")
  (depends 
-    (ocaml (= 4.14.0))
+    ocaml
     yojson)
  (tags
   ("add topics" "to describe" your project)))
