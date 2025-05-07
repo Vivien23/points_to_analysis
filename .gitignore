@@ -2,6 +2,7 @@
 *.code-workspace
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 _build/*
 =======
 _build
@@ -9,3 +10,6 @@ _build
 =======
 _build/
 >>>>>>> a50b8ae (Updated gitignore)
+=======
+_build/
+>>>>>>> refs/remotes/origin/unstable
