@@ -2,3 +2,5 @@
 *.code-workspace
 _build/*
 test/rust/src/target/*
+*.llbc
+*.ullbc
