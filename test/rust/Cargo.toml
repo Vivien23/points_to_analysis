@@ -28,3 +28,7 @@ path = "src/open_ssl.rs"
 name = "prot_perm"
 path = "src/prot_perm.rs"
 
+[[bin]]
+name = "borrow_cf"
+path = "src/borrow_cf.rs"
+
