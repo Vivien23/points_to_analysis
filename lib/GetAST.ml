@@ -1,6 +1,6 @@
 let load_file filename =
   let json = Yojson.Basic.from_file filename in
-  match Charon.LlbcOfJson.crate_of_json json with
+  match Charon.UllbcOfJson.crate_of_json json with
   | Ok r -> r
   | Error e ->
       Printf.fprintf stderr
