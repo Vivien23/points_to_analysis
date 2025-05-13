@@ -1,4 +1,4 @@
-(library
+(executable
  (public_name points_to_analysis)
  (name main)
- (libraries charon))
+ (libraries points_to_analysis))

@@ -3,10 +3,10 @@ fn secret() -> bool{
 }
 
 fn main(){
-    let mut x = 0;
-    let _y = &mut x;
+    let x = 0;
+    let _y = x;
     if secret() {
-        let _z = &mut x;
+        let _z = x;
     }
 
 }

@@ -13,6 +13,10 @@ name = "arc_swap"
 path = "src/arc_swap.rs"
 
 [[bin]]
+name = "open_ssl"
+path = "src/open_ssl.rs"
+
+[[bin]]
 name = "double_free"
 path = "src/double_free.rs"
 
@@ -21,14 +25,25 @@ name = "exp_perm"
 path = "src/exp_perm.rs"
 
 [[bin]]
-name = "open_ssl"
-path = "src/open_ssl.rs"
-
-[[bin]]
 name = "prot_perm"
 path = "src/prot_perm.rs"
+
+[[bin]]
+name = "borrow1"
+path = "src/borrow1.rs"
 
 [[bin]]
 name = "borrow_cf"
 path = "src/borrow_cf.rs"
 
+[[bin]]
+name = "own1"
+path = "src/own1.rs"
+
+[[bin]]
+name = "own2"
+path = "src/own2.rs"
+
+[[bin]]
+name = "own_cf"
+path = "src/own_cf.rs"

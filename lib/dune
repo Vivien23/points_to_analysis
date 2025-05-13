@@ -1,2 +1,3 @@
 (library
- (name points_to_analysis))
+ (name points_to_analysis)
+ (libraries charon))
