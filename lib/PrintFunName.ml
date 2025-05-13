@@ -1,5 +1,5 @@
 
-let printf_fun_names () =
+let print_fun_names () =
   let crate = GetAST.load_file "test/own_cf.ullbc" in
 
   let fun_decls_print _ (fun_decl:'fun_body Charon.GAst.gfun_decl) =
