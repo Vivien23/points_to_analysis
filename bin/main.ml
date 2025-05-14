@@ -1,1 +1,1 @@
-let _ = Points_to_analysis.PrintFunName.print_fun_names ();;
+let _ = Points_to_analysis.Printer.print_statements ("test/nested_fun.ullbc");;
