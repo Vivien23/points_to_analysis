@@ -47,3 +47,7 @@ path = "src/own2.rs"
 [[bin]]
 name = "own_cf"
 path = "src/own_cf.rs"
+
+[[bin]]
+name = "nested_fun"
+path = "src/nested_fun.rs"
