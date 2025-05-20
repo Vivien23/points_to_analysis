@@ -12,7 +12,7 @@ let print_fun_names filename =
 let print_statements filename =
   let crate = GetAST.load_file filename in 
 
-  let behaviour_on_statement () (statement: Charon.Generated_UllbcAst.statement) =
+  let behaviour_on_statement (statement: Charon.Generated_UllbcAst.statement) =
       match statement.content with
       | Assign (place, rvalue) -> 
           let assign_to = 
@@ -45,7 +45,7 @@ let print_statements filename =
 
   let behaviour_on_fun_decl _ (fun_decl: Charon.UllbcAst.blocks Charon.UllbcAst.gfun_decl) =
     match fun_decl.body with
-    | Some(bdy: Charon.UllbcAst.blocks Charon.UllbcAst.gexpr_body) -> List.fold_left (fun _ (block: Charon.UllbcAst.block)  -> print_endline "Entering new block :"; List.fold_left behaviour_on_statement () block.statements; print_endline "") () (bdy.body)
+    | Some(bdy: Charon.UllbcAst.blocks Charon.UllbcAst.gexpr_body) -> List.iter (fun (block: Charon.UllbcAst.block)  -> print_endline "Entering new block :"; List.iter behaviour_on_statement block.statements; print_endline "") (bdy.body)
     | None -> ()
   in 
 
