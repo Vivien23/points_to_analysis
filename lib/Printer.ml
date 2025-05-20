@@ -14,12 +14,25 @@ let print_statements filename =
 
   let behaviour_on_statement () (statement: Charon.Generated_UllbcAst.statement) =
       match statement.content with
-      | Assign (place, _rvalue) -> 
+      | Assign (place, rvalue) -> 
           let assign_to = 
             match place.kind with
             | PlaceBase var_id -> Charon.PrintExpressions.var_id_to_pretty_string var_id
             | PlaceProjection (_place, _proj_elem) -> "TODO : projections"
-          in print_string "Assign "; print_string "smt"; print_string " to "; print_endline assign_to
+          in 
+          let assign_from =
+            match rvalue with
+            | Use _ -> "Use"
+            | RvRef _ -> "RvRef"
+            | RawPtr _ -> "omg raw ptr"
+            | BinaryOp _ -> "BinOp"
+            | UnaryOp _ -> "UnaOp"
+            | NullaryOp _ -> "NulOp"
+            | Discriminant _ -> "What is a discriminant"
+            | Aggregate _ -> "omg aggregate"
+            | Global global_decl_ref -> Charon.PrintGAst.any_decl_id_to_string (IdGlobal global_decl_ref.global_id)
+            | _ -> "Catch all case"
+          in print_string "Assign "; print_string assign_from; print_string " to "; print_endline assign_to
       | Call _ -> print_endline "Call"
       | FakeRead _ -> if print_fake_read then print_endline "FakeRead"
       | SetDiscriminant _ -> print_endline "SetDiscriminant"
