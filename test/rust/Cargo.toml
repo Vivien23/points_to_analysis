@@ -37,6 +37,10 @@ name = "borrow_cf"
 path = "src/borrow_cf.rs"
 
 [[bin]]
+name = "double_borrow"
+path = "src/double_borrow.rs"
+
+[[bin]]
 name = "own1"
 path = "src/own1.rs"
 
