@@ -1,7 +1,6 @@
 let print_fake_read = false;;
 
-let print_fun_names filename =
-  let crate = GetAST.load_file filename in
+let print_fun_names crate =
 
   let fun_decls_print _ (fun_decl:'fun_body Charon.GAst.gfun_decl) =
     print_endline (Charon.PrintTypes.name_to_string (Charon.PrintUtils.of_crate crate) fun_decl.item_meta.name);
@@ -9,10 +8,9 @@ let print_fun_names filename =
   Charon.Generated_Types.FunDeclId.Map.iter fun_decls_print crate.fun_decls
 ;;
 
-let print_statements filename =
-  let crate = GetAST.load_file filename in 
+let print_statements (crate: Charon.UllbcAst.crate) =
 
-  let behaviour_on_statement (statement: Charon.Generated_UllbcAst.statement) =
+  let behaviour_on_statement (statement: Charon.UllbcAst.statement) =
       match statement.content with
       | Assign (place, rvalue) -> 
           let assign_to = 
