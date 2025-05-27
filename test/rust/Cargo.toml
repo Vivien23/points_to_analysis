@@ -41,6 +41,10 @@ name = "double_borrow"
 path = "src/double_borrow.rs"
 
 [[bin]]
+name = "mut_brw"
+path = "src/mut_brw.rs"
+
+[[bin]]
 name = "own1"
 path = "src/own1.rs"
 
