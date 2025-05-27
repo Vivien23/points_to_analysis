@@ -47,5 +47,5 @@ let print_statements (crate: Charon.UllbcAst.crate) =
     | None -> ()
   in 
 
-  Charon.Generated_Types.FunDeclId.Map.iter behaviour_on_fun_decl crate.fun_decls
+  Charon.Types.FunDeclId.Map.iter behaviour_on_fun_decl crate.fun_decls
 ;;  
