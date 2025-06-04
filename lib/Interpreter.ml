@@ -7,6 +7,24 @@ module VarIdMap = Map.Make(struct
   let compare = VarId.compare_id 
 end)
 
+module ProgramPoint = struct
+  type block_id = int
+  type statement_id = int
+  type program_point_id =  {
+  fun_id : Charon.UllbcAst.FunDeclId.id;
+  block_id : block_id;
+  stm_id : statement_id;
+}
+end
+
+module ProgramPointMap = Map.Make(struct
+  type t = ProgramPoint.program_point_id
+  let compare (pp1: ProgramPoint.program_point_id) (pp2: ProgramPoint.program_point_id) = 
+    let diff_fun_id = Charon.UllbcAst.FunDeclId.compare_id pp1.fun_id pp2.fun_id in
+    if diff_fun_id != 0 then diff_fun_id else compare (pp1.block_id, pp1.stm_id) (pp2.block_id, pp2.stm_id)
+end
+)
+
 
 type value = 
   | Cons of Charon.Values.big_int
@@ -67,7 +85,7 @@ let interpreter crate =
     | PlaceProjection(_place, Field(_)), _ -> failwith "Fields aren't supported yet"
   in
 
-  let rec interpret_expr (sigma: value VarIdMap.t) (expr: expression) =
+  let interpret_expr (sigma: value VarIdMap.t) (expr: expression) =
     match expr with
     | Val(Cons cst) -> sigma, (Cons cst)
     | Val(Borrow(place, _b_kind)) -> 
